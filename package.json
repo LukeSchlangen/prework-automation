@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/LukeSchlangen/prework-automation/issues"
   },
-  "homepage": "https://github.com/LukeSchlangen/prework-automation#readme"
+  "homepage": "https://github.com/LukeSchlangen/prework-automation#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.0"
+  }
 }
