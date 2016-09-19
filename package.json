@@ -1,0 +1,20 @@
+{
+  "name": "prework-automation",
+  "version": "1.0.0",
+  "description": "Automating prework submission and some parts of grading",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon server/app.js",
+    "start": "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LukeSchlangen/prework-automation.git"
+  },
+  "author": "Luke Schlangen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LukeSchlangen/prework-automation/issues"
+  },
+  "homepage": "https://github.com/LukeSchlangen/prework-automation#readme"
+}
