@@ -6,52 +6,67 @@
   <link rel="stylesheet" href="/vendors/bootstrap.min.css"></link>
   <link rel="stylesheet" href="/vendors/highlight/styles/default.css">
 </head>
-<body>
-  <a href="https://www.dropbox.com/s/10raa7fi4rqu3ta/prime_prestudy_week_2.js?dl=0">Code can be found here</a>
+<body ng-app="PreworkApp">
+  <!-- <a href="https://www.dropbox.com/s/10raa7fi4rqu3ta/prime_prestudy_week_2.js?dl=0">Code can be found here</a> -->
   <header class="col-xs-12">
-    <h2>In this assignment, you will need to work through each of the steps and figure out what the value of the variable equals each step of the way. Once you have worked out what the value is at each step, complete the form to tell us your answers.</h2>
+    <h1>Pre-Work Week 2</h1>
+    <p>In this assignment, you will need to work through each of the steps and figure out what the value of the variable equals each step of the way. Once you have worked out what the value is at each step, complete the form to tell us your answers.</p>
   </header>
   <section class="col-md-8">
-    <pre><code>
-      //variable created:
-      var x = 3;
+    <pre><code>//variable created:
+var x = 3;
 
-      //step 1, what does x after the changes in the code below?
-      x = x + x
+//step 1, what does x equal after the changes in the code below?
+x = x + x
 
-      //step 2, what does x after the changes in the code below?
-      for(var i = 0; i < 4; i++){
-        x = x + 1
-      }
+//step 2, what does x equal after the changes in the code below?
+for(var i = 0; i < 4; i++){
+  x = x + 1
+}
 
-      //step 3, what does x after the changes in the code below?
-      if(x > 10){
-        x = 2;
-      } else {
-        x = 3;
-      }
+//step 3, what does x equal after the changes in the code below?
+if(x > 10){
+  x = 2;
+} else {
+  x = 3;
+}
 
-      //step 4, what does x after the changes in the code below?
-      function doubleIt(value){
-        return value*2;
-      }
+//step 4, what does x equal after the changes in the code below?
+function doubleIt(value){
+  return value*2;
+}
 
-      doubleIt(x);
-      x = doubleIt(x);
+doubleIt(x);
+x = doubleIt(x);
 
-      //step 5, what does x after the changes in the code below?
-      var numberArray = [1,2,3];
+//step 5, what does x equal after the changes in the code below?
+var numberArray = [1,2,3];
 
-      for(i = 0; i < numberArray.length; i++){
-        x = x + numberArray[i];
-      }
-    </code></pre>
+for(i = 0; i < numberArray.length; i++){
+  x = x + numberArray[i];
+}</code></pre>
   </section>
   <section class="col-md-4">
-    <input type="text"/>
+    <form name="userForm" novalidate>
+      <div class="form-group" show-errors='{showSuccess: true}'>
+        <label class="control-label">Name</label>
+        <input type="text" class="form-control" name="name" ng-model="user.name" required placeholder="Name" />
+        <p class="help-block" ng-if="userForm.name.$error.required">The user's name is required</p>
+      </div>
+      <div class="form-group" show-errors='{showSuccess: true}'>
+        <label class="control-label">Email</label>
+        <input type="email" class="form-control" name="email" ng-model="user.email" required placeholder="Email" />
+        <p class="help-block" ng-if="userForm.email.$error.required">The user's email is required</p>
+        <p class="help-block" ng-if="userForm.email.$error.email">The email address is invalid</p>
+      </div>
+
+      <button class="btn btn-primary" ng-click="save()">Add User</button>
+      <button class="btn btn-link" ng-click="reset()">Reset</button>
+    </form>
   </section>
   <script src="/vendors/highlight/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <script type="text/javascript" src="/vendors/angular.min.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
 </body>
 </html>
